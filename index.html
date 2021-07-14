@@ -1,841 +1,201 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+
+<html>
+
 <head>
-  <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
 
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-<link rel="stylesheet" href="/css/main.css">
+  <title>LYMTICS</title>
 
+  <style type="text/css">
+    body,
+    div,
+    h3,
+    h4,
+    li,
+    ol {
+      margin: 0;
+      padding: 0
+    }
 
+    body {
+      font: 14px/1.5 'Microsoft YaHei', '微软雅黑', Helvetica, Sans-serif;
+      min-width: 1200px;
+      background: #f0f1f3;
+    }
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+    :focus {
+      outline: 0
+    }
 
-<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;lymtics.top&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;post&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:true,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;manual&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:true,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:true,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;none&quot;,&quot;post_body&quot;:&quot;fadeInUp&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;}}</script>
-<meta name="description" content="幸遇三杯酒好，况逢一朵花新。  片时欢笑且相亲，明日阴晴未定。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="LYMTICS">
-<meta property="og:url" content="https://lymtics.top/index.html">
-<meta property="og:site_name" content="LYMTICS">
-<meta property="og:description" content="幸遇三杯酒好，况逢一朵花新。  片时欢笑且相亲，明日阴晴未定。">
-<meta property="og:locale" content="zh_CN">
-<meta property="article:author" content="Ren">
-<meta name="twitter:card" content="summary">
+    h3,
+    h4,
+    strong {
+      font-weight: 700
+    }
 
+    a {
+      color: #428bca;
+      text-decoration: none
+    }
 
-<link rel="canonical" href="https://lymtics.top/">
+    a:hover {
+      text-decoration: underline
+    }
 
+    .error-page {
+      background: #f0f1f3;
+      padding: 80px 0 180px
+    }
 
+    .error-page-container {
+      position: relative;
+      z-index: 1
+    }
 
-<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:true,&quot;isPost&quot;:false,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:&quot;&quot;,&quot;permalink&quot;:&quot;&quot;,&quot;path&quot;:&quot;index.html&quot;,&quot;title&quot;:&quot;&quot;}</script>
+    .error-page-main {
+      position: relative;
+      background: #f9f9f9;
+      margin: 0 auto;
+      width: 617px;
+      -ms-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 50px 50px 70px
+    }
 
-<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
-<title>LYMTICS</title><script src="/js/config.js"></script>
-  
+    .error-page-main:before {
+      content: '';
+      display: block;
+      background: url(img/errorPageBorder.png?1427783409637);
+      height: 7px;
+      position: absolute;
+      top: -7px;
+      width: 100%;
+      left: 0
+    }
 
+    .error-page-main h3 {
+      font-size: 24px;
+      font-weight: 400;
+      border-bottom: 1px solid #d0d0d0
+    }
 
+    .error-page-main h3 strong {
+      font-size: 54px;
+      font-weight: 400;
+      margin-right: 20px
+    }
 
+    .error-page-main h4 {
+      font-size: 20px;
+      font-weight: 400;
+      color: #333
+    }
 
-  <noscript>
-    <link rel="stylesheet" href="/css/noscript.css">
-  </noscript>
+    .error-page-actions {
+      font-size: 0;
+      z-index: 100
+    }
+
+    .error-page-actions div {
+      font-size: 14px;
+      display: inline-block;
+      padding: 30px 0 0 10px;
+      width: 50%;
+      -ms-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      color: #838383
+    }
+
+    .error-page-actions ol {
+      list-style: decimal;
+      padding-left: 20px
+    }
+
+    .error-page-actions li {
+      line-height: 2.5em
+    }
+
+    .error-page-actions:before {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      bottom: 17px;
+      left: 50px;
+      width: 200px;
+      height: 10px;
+      -moz-box-shadow: 4px 5px 31px 11px #999;
+      -webkit-box-shadow: 4px 5px 31px 11px #999;
+      box-shadow: 4px 5px 31px 11px #999;
+      -moz-transform: rotate(-4deg);
+      -webkit-transform: rotate(-4deg);
+      -ms-transform: rotate(-4deg);
+      -o-transform: rotate(-4deg);
+      transform: rotate(-4deg)
+    }
+
+    .error-page-actions:after {
+      content: '';
+      display: block;
+      position: absolute;
+      z-index: -1;
+      bottom: 17px;
+      right: 50px;
+      width: 200px;
+      height: 10px;
+      -moz-box-shadow: 4px 5px 31px 11px #999;
+      -webkit-box-shadow: 4px 5px 31px 11px #999;
+      box-shadow: 4px 5px 31px 11px #999;
+      -moz-transform: rotate(4deg);
+      -webkit-transform: rotate(4deg);
+      -ms-transform: rotate(4deg);
+      -o-transform: rotate(4deg);
+      transform: rotate(4deg)
+    }
+  </style>
+
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+<body>
 
-  <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
-  <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-    </div>
-  </div>
+  <div class="error-page">
 
-  <div class="site-meta">
+    <div class="error-page-container">
 
-    <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
-      <h1 class="site-title">LYMTICS</h1>
-      <i class="logo-line"></i>
-    </a>
-      <p class="site-subtitle" itemprop="description">爱你所爱</p>
-  </div>
+      <div class="error-page-main">
 
-  <div class="site-nav-right">
-    <div class="toggle popup-trigger">
-    </div>
-  </div>
-</div>
+        <h3>
 
+          <strong>404</strong>很抱歉，网站暂时关闭
 
+        </h3>
 
-<nav class="site-nav">
-  <ul class="main-menu menu">
-        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
-        <li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
-        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
-        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
-        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
-        <li class="menu-item menu-item-收藏夹"><a href="/favorites/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>收藏夹</a></li>
-  </ul>
-</nav>
+        <div class="error-page-actions">
 
+          <div>
+            <h4>灯火阑珊</h4>
+            <p>众里寻他千百度</p>
+            <p>蓦然回首</p>
+            <p>那人却在灯火阑珊处</p>
 
-
-
-</div>
-        
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Ren"
-      src="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
-  <p class="site-author-name" itemprop="name">Ren</p>
-  <div class="site-description" itemprop="description">幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。</div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">11</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="https://github.com/lxymtics" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;lxymtics" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="mailto:lxymtics@qq.com" title="E-Mail → mailto:lxymtics@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-  </div>
-
-
-  <div class="links-of-blogroll site-overview-item animated">
-    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
-      Links
-    </div>
-    <ul class="links-of-blogroll-list">
-        <li class="links-of-blogroll-item">
-          <a href="https://xy.lymtics.top/" title="https:&#x2F;&#x2F;xy.lymtics.top&#x2F;" rel="noopener" target="_blank">Mine</a>
-        </li>
-        <li class="links-of-blogroll-item">
-          <a href="https://lymtics.top/meet/" title="https:&#x2F;&#x2F;lymtics.top&#x2F;meet&#x2F;">Meet</a>
-        </li>
-    </ul>
-  </div>
+          </div>
 
         </div>
+
       </div>
+
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
 
-
-    </header>
-
-    
-  <div class="back-to-top" role="button" aria-label="返回顶部">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
   </div>
-  <div class="reading-progress-bar"></div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner index posts-expand">
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/3993.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/3993.html" class="post-title-link" itemprop="url">获取Promise的返回值</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-04-16 00:00:00" itemprop="dateCreated datePublished" datetime="2021-04-16T00:00:00+08:00">2021-04-16</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-10 17:28:59" itemprop="dateModified" datetime="2021-05-10T17:28:59+08:00">2021-05-10</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/JavaScript/" itemprop="url" rel="index"><span itemprop="name">JavaScript</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>813</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><em>注 : 作者对本文内容不满意, 以后可能会修改或删除</em></p>
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>今天用Vue写项目的时候, 有一个功能是用一个参数Id通过网络请求一个数据.</p>
-<p>由于VueCLI中我用的网络请求插件是Axios, 默认会返回一个Promise对象, 导致我无法获取想要的数据.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/3993.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/48711.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/48711.html" class="post-title-link" itemprop="url">C/C++关于NULL和nullptr的区别</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-07 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-07T00:00:00+08:00">2021-03-07</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-10 17:26:38" itemprop="dateModified" datetime="2021-05-10T17:26:38+08:00">2021-05-10</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>719</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div class="note no-icon default"><p><strong>参考</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012707739/article/details/77915483">C/C++中的NULL与nullptr</a></p>
-</div>
-
-
-
-<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>在用C++尾插法构建链表时, 我用<code>NULL</code>来表示空指针, 并用如下代码检查是否到了链表的尾部:</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (oldE-&gt;next)</span><br></pre></td></tr></table></figure>
-
-<p>但是在debug时发现这个表达式总是正确的</p>
-<p>经过查资料发现:</p>
-<ul>
-<li>我们可以在C中用NULL表示空指针</li>
-<li>但是在C++中, <code>NULL</code>并不能用来表示空指针, 而应该用<code>nullptr</code></li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/48711.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/7451.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/7451.html" class="post-title-link" itemprop="url">Vue Axios 基本使用</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-03-04 00:00:00" itemprop="dateCreated datePublished" datetime="2021-03-04T00:00:00+08:00">2021-03-04</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-10 17:29:07" itemprop="dateModified" datetime="2021-05-10T17:29:07+08:00">2021-05-10</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div class="note no-icon default"><p><strong>快速链接</strong></p>
-<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/v2/cookbook/using-axios-to-consume-apis.html">使用axios访问API</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.axios-js.com/zh-cn/docs/">axios中文文档|axios中文网</a></p>
-</div>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/7451.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/26645.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/26645.html" class="post-title-link" itemprop="url">Vue Router 用法笔记</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-02-24 00:00:00" itemprop="dateCreated datePublished" datetime="2021-02-24T00:00:00+08:00">2021-02-24</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-10 17:29:29" itemprop="dateModified" datetime="2021-05-10T17:29:29+08:00">2021-05-10</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/Vue/" itemprop="url" rel="index"><span itemprop="name">Vue</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>7.6k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>7 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div class="note no-icon default"><p><strong>快速链接</strong></p>
-<p><a target="_blank" rel="noopener" href="https://router.vuejs.org/zh/installation.html">Vue Router 官方文档</a></p>
-</div>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/26645.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="https://lymtics.top/posts/9053.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://gitee.com/Renen/blogpic/raw/master/publicSrc/avatar/avatar_001.jpeg">
-      <meta itemprop="name" content="Ren">
-      <meta itemprop="description" content="幸遇三杯酒好，况逢一朵花新。 <br> 片时欢笑且相亲，明日阴晴未定。">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="LYMTICS">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/posts/9053.html" class="post-title-link" itemprop="url">宏定义和constexpr的区别</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2021-01-07 11:42:10" itemprop="dateCreated datePublished" datetime="2021-01-07T11:42:10+08:00">2021-01-07</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2021-05-10 17:26:49" itemprop="dateModified" datetime="2021-05-10T17:26:49+08:00">2021-05-10</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">分类于</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
-        </span>
-          ，
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/C/" itemprop="url" rel="index"><span itemprop="name">C++</span></a>
-        </span>
-    </span>
-
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>2 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <div class="note no-icon default"><p><strong>Reference:</strong></p>
-<p><a target="_blank" rel="noopener" href="https://qa.1r1g.com/sf/ask/2967165421/"><a target="_blank" rel="noopener" href="https://qa.1r1g.com/sf/ask/2967165421/#">Constexpr与宏</a></a></p>
-</div>
-
-<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>使用VS编写代码时, 总是被提醒让把<code>#define</code>转换成<code>constexpr</code>, 不解其故, 所以上网查询了一下</p>
-<h2 id="原文摘录"><a href="#原文摘录" class="headerlink" title="原文摘录"></a>原文摘录</h2><p>它们基本不一样吗？</p>
-<p>不,绝对不是.差远了.</p>
-<p>除了你的宏是一个<code>int</code>而你的<code>constexpr unsigned</code>是一个<code>unsigned</code>,你有一个重要的区别,宏只有<strong>一个</strong>优势.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/9053.html#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-<script src="/js/comments.js"></script>
-</div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-
-
-<div class="copyright">
-  &copy; 2020 – 
-  <span itemprop="copyrightYear">2021</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Ren</span>
-</div>
-<div class="busuanzi-count">
-    <span class="post-meta-item" id="busuanzi_container_site_uv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-user"></i>
-      </span>
-      <span class="site-uv" title="总访客量">
-        <span id="busuanzi_value_site_uv"></span>
-      </span>
-    </span>
-    <span class="post-meta-item" id="busuanzi_container_site_pv">
-      <span class="post-meta-item-icon">
-        <i class="fa fa-eye"></i>
-      </span>
-      <span class="site-pv" title="总访问量">
-        <span id="busuanzi_value_site_pv"></span>
-      </span>
-    </span>
-</div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
-  </div>
-
-    </div>
-  </footer>
-
-  
-  <script size="300" alpha="0.6" zIndex="-1" src="https://cdn.jsdelivr.net/npm/ribbon.js@1.0.2/dist/ribbon.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="/true"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/pjax.js"></script>
-
-  
-
-
-
-  <script class="next-config" data-name="pdf" type="application/json">{&quot;object_url&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;pdfobject@2.2.5&#x2F;pdfobject.min.js&quot;,&quot;url&quot;:&quot;&#x2F;lib&#x2F;pdf&#x2F;web&#x2F;viewer.html&quot;}</script>
-  <script src="/js/third-party/tags/pdf.js"></script>
-
-
-
-  
-  <script data-pjax async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-
-  
-
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{&quot;enable&quot;:true,&quot;tags&quot;:&quot;none&quot;,&quot;js&quot;:&quot;https:&#x2F;&#x2F;cdn.jsdelivr.net&#x2F;npm&#x2F;mathjax@3.1.4&#x2F;es5&#x2F;tex-mml-chtml.js&quot;}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/quicklink@2.1.0/dist/quicklink.umd.js"></script>
-  <script class="next-config" data-name="quicklink" type="application/json">{&quot;enable&quot;:false,&quot;home&quot;:false,&quot;archive&quot;:false,&quot;delay&quot;:true,&quot;timeout&quot;:3000,&quot;priority&quot;:true,&quot;ignores&quot;:null,&quot;url&quot;:&quot;https:&#x2F;&#x2F;lymtics.top&#x2F;&quot;}</script>
-  <script src="/js/third-party/quicklink.js"></script>
 
 </body>
+
 </html>
